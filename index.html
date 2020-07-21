@@ -1,0 +1,173 @@
+﻿<!-- Made with love by: Frederic Davidsen -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Horoscope</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">FD</a>
+        <a class="d-block d-lg-none d-xl-none text-warning greeting">Hello, Guest</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#features" id="features-nav" hidden>Features</a></li>
+          </ul>
+
+          <a class="d-none d-lg-block d-xl-block ml-md-auto text-warning greeting">Hello, Guest</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row justify-content-center mt-3">
+      <div class="form-group">
+        <label for="zodiacOptions"><h4>What's your Zodiac Sign?</h4></label>
+        <select class="form-control" id="zodiacOptions">
+          <option hidden selected>I'm ...</option>
+          <option>Aries (♈)</option>
+          <option>Taurus (♉)</option>
+          <option>Gemini (♊)</option>
+          <option>Cancer (♋)</option>
+          <option>Leo (♌)</option>
+          <option>Virgo (♍)</option>
+          <option>Libra (♎)</option>
+          <option>Scorpio (♏)</option>
+          <option>Sagittarius (♐)</option>
+          <option>Capricorn (♑)</option>
+          <option>Aquarius (♒)</option>
+          <option>Pisces (♓)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center mb-3">
+      <div class="spinner-border" role="status" hidden>
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <div class="row justify-content-center" id="zodiac-table">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <table class="table text-center">
+              <thead>
+                <tr>  <th scope="col">Sign</th> <th scope="col">Date Range</th> </tr>
+              </thead>
+              <tbody>
+                <tr>  <td>Aquarius</td>     <td>Jan 20 - Feb 18</td>  </tr>
+                <tr>  <td>Pisces</td>       <td>Feb 19 - Mar 20</td>  </tr>
+                <tr>  <td>Aries</td>        <td>Mar 21 - Apr 20</td>  </tr>
+                <tr>  <td>Taurus</td>       <td>Apr 21 - May 20</td>  </tr>
+                <tr>  <td>Gemini</td>       <td>May 21 - Jun 21</td>  </tr>
+                <tr>  <td>Cancer</td>       <td>Jun 22 - Jul 22</td>  </tr>
+                <tr>  <td>Leo</td>          <td>Jul 23 - Aug 22</td>  </tr>
+                <tr>  <td>Virgo</td>        <td>Aug 23 - Sep 22</td>  </tr>
+                <tr>  <td>Libra</td>        <td>Sep 23 - Oct 22</td>  </tr>
+                <tr>  <td>Scorpio</td>      <td>Oct 23 - Nov 22</td>  </tr>
+                <tr>  <td>Sagittarius</td>  <td>Nov 23 - Dec 21</td>  </tr>
+                <tr>  <td>Capricorn</td>    <td>Dec 22 - Jan 19</td>  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center" hidden id="home">
+      <div class="col-sm-6">
+        <div class="card">
+          <h4 class="card-title text-center mt-3"></h4>
+          <h6 class="card-subtitle mb-2 text-muted text-center"></h6>
+
+          <div class="card-body">
+            <p class="card-text" id="description"></p>
+            <p class="card-text" id="description-today"></p>
+            <div class="row mt-4">
+              <div class="col">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Current Date:</li>
+                  <li class="list-group-item">Color:</li>
+                  <li class="list-group-item">Mood:</li>
+                  <li class="list-group-item">Compatibility:</li>
+                  <li class="list-group-item">Lucky Time:</li>
+                  <li class="list-group-item">Lucky Number:</li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" id="current-date"></li>
+                  <li class="list-group-item" id="color"></li>
+                  <li class="list-group-item" id="mood"></li>
+                  <li class="list-group-item" id="compatibility"></li>
+                  <li class="list-group-item" id="lucky-time"></li>
+                  <li class="list-group-item" id="lucky-number"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-5" style="padding-top: 80px;" hidden id="features">
+      <div class="col-sm-6">
+        <div class="card">
+          <h4 class="card-header card-title text-center"></h4>
+
+          <div class="card-body">
+            <h6 class="text-center" id="tomorrow"></h6>
+            <p class="card-text" id="tomorrow-content"></p>
+          </div>
+
+          <div class="card-body">
+            <h6 class="text-center" id="week"></h6>
+            <p class="card-text" id="week-content"></p>
+          </div>
+
+          <div class="card-body">
+            <h6 class="text-center" id="month"></h6>
+            <p class="card-text" id="month-content"></p>
+          </div>
+
+          <div class="card-body">
+            <h6 class="text-center" id="year"></h6>
+            <p class="card-text" id="year-content"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- My JavaScript -->
+    <script type="text/javascript" src="js/mapping.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
+
+
+
+<!-- API Source: https://github.com/tapaswenipathak/Horoscope-API -->
+<!-- API Source: https://github.com/sameerkumar18/aztro -->
