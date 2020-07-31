@@ -1,5 +1,5 @@
 # Horoscope
-This is simple REST API project on daily horoscope of 12 Astrology Zodiac Signs.
+A simple REST API project on the daily horoscope of 12 Astrology Zodiac Signs.
 
 ## Sources of API
 - https://github.com/tapaswenipathak/Horoscope-API
