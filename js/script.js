@@ -1,7 +1,7 @@
 // When zodiac is selected.
 $('select#zodiacOptions').change(function() {
 	$('.spinner-border').removeAttr('hidden');
-	const sign = $(this).children('option:selected').val().split(' ')[0];
+	const sign = $(this).children('option:selected').val();
 	$('.card-title').html(sign);
 	$('.greeting').html('Hello, ' + zodiacs.get(sign));
 
