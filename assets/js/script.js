@@ -14,6 +14,7 @@ $('select#zodiacOptions').change(function() {
 	const sign = $(this).children('option:selected').val();
 	$('.card-title').html(sign);
 	$('.greeting').html('Hello, ' + zodiacs.get(sign));
+	$('.zodiac-picture').attr('src', 'assets/img/' + sign + '.jpg');
 	$('.spinner-overlay').removeAttr('hidden');
 
 	$.when(herokuapp(sign, 'today')).done(function(data) {

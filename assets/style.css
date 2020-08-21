@@ -8,3 +8,9 @@
 	opacity: 0.5;
 	filter: alpha(opacity=50);
 }
+.zodiac-picture {
+	width: 50%;
+	margin-left: 25%;
+	margin-bottom: 1.5rem;
+	border-radius: 2.5%;
+}
