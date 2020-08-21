@@ -1,9 +1,20 @@
+// PWA
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('sw.js').then(registration => {
+		console.log('SW Registered!');
+		console.log(registration);
+	}).catch(error => {
+		console.log('SW Registration Failed!');
+		console.log(error);
+	});
+}
+
 // When zodiac is selected.
 $('select#zodiacOptions').change(function() {
-	$('.spinner-border').removeAttr('hidden');
 	const sign = $(this).children('option:selected').val();
 	$('.card-title').html(sign);
 	$('.greeting').html('Hello, ' + zodiacs.get(sign));
+	$('.spinner-overlay').removeAttr('hidden');
 
 	$.when(herokuapp(sign, 'today')).done(function(data) {
 		$('#description').html(data.horoscope);
@@ -19,8 +30,8 @@ $('select#zodiacOptions').change(function() {
 		$('#lucky-time').html(data.lucky_time);
 		$('#lucky-number').html(data.lucky_number);
 		$('#home').removeAttr('hidden');
-		$('.spinner-border').attr('hidden', '');
 		$('#zodiac-table').attr('hidden', '');
+		$('.spinner-overlay').attr('hidden', '');
 	});
 	
 	$.when(aztro(sign, 'tomorrow')).done(function(data) {
