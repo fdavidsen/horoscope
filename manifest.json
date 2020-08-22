@@ -3,7 +3,7 @@
 	"short_name": "Daily Horoscope",
 	"start_url": ".",
 	"theme_color": "#353a40",
-	"background_color": "#a5ab91",
+	"background_color": "#000",
 	"display": "standalone",
 	"icons": [
 		{
