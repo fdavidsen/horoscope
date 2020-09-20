@@ -1,3 +1,7 @@
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
 .spinner-overlay {
 	position: fixed;
 	width: 100%;
