@@ -1,5 +1,5 @@
 # Horoscope
-Daily horoscope of 12 Astrology Zodiac Signs with the addition of current week, month, and year. [Preview](https://fdavidsen.github.io/horoscope/)
+Daily horoscope of 12 Astrology Zodiac Signs with the addition of current week, month, and year.
 
 ## Sources of API
 - https://github.com/tapaswenipathak/Horoscope-API
